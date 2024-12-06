@@ -8,3 +8,7 @@ void Character::Setpoint(int x, int y){
     point.x = x;
     point.y = y;
 }
+
+std::string Character::Getid(){
+    return id;
+}

@@ -29,6 +29,7 @@ public:
     virtual void DoBehavior() = 0;
     Point Getpoint();
     void Setpoint(int x, int y);
+    std::string Getid();
 };
 
 #endif

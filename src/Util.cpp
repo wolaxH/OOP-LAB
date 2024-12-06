@@ -26,3 +26,16 @@ void Draw(Point BlinkyPoint,Point InkyPoint,Point PinkyPoint,Point ClydePoint,Po
         }
     }
 }
+
+bool IsEnd(std::vector<std::shared_ptr<Character>> Characters){
+    Point Pacman = Characters[4]->Getpoint();
+    Point enemy(0, 0);
+    for (int i = 0; i < 4; i++){
+        enemy = Characters[i]->Getpoint();
+        if (enemy.x == Pacman.x || enemy.y == Pacman.y){
+            return true;
+        }
+        
+    }
+    return false;
+}

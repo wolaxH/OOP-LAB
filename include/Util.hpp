@@ -15,4 +15,6 @@
 
 void Draw(Point BlinkyPoint,Point InkyPoint,Point PinkyPoint,Point ClydePoint,Point PacmanPoint);
 
+bool IsEnd(std::vector<std::shared_ptr<Character>> Characters);
+
 #endif
