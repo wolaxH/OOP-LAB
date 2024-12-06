@@ -13,6 +13,7 @@ void Pacman::DoBehavior(){
     do{
         std::cin >> operate;
         flag = false;
+        
         switch (operate)
         {
         case 'w':
@@ -25,7 +26,7 @@ void Pacman::DoBehavior(){
             current.y += 3;
             break;
         case 'd':
-            current.y += 3;
+            current.x += 3;
             break;    
         default:
             std::cout << "Error input!";
@@ -46,4 +47,5 @@ void Pacman::DoBehavior(){
         }
     }while(flag);
     Setpoint(current.x, current.y);
+    
 }

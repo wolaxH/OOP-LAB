@@ -11,6 +11,8 @@ int main(){
     Characters.push_back(std::make_shared<Pinky>("Pinky", 0, 15));
     Characters.push_back(std::make_shared<Clyde>("Clyde", 7, 7, Pacman_Point));
     Characters.push_back(std::make_shared<Pacman>("Pacman", 10, 10));
+//    Characters.push_back(std::make_shared<Pacman>("Pacman", 7, 10));  //win mode
+
     
     Draw(Characters[0]->Getpoint(), Characters[1]->Getpoint(), Characters[2]->Getpoint()
             , Characters[3]->Getpoint(), Characters[4]->Getpoint());
@@ -26,10 +28,11 @@ int main(){
         
         if (IsEnd(Characters)){
             std::cout << "Loser\n";
-            break;
+            return 0;
         }
         Draw(Characters[0]->Getpoint(), Characters[1]->Getpoint(), Characters[2]->Getpoint()
             , Characters[3]->Getpoint(), Characters[4]->Getpoint());
     }
+    std::cout << "I win";
     return 0;
 }

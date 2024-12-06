@@ -22,10 +22,11 @@ void Clyde::DoBehavior(){
         if (Pacman_Point.x > current.x) current.x += 2;
         else current.x -= 2;
     }
-    if (current.x > 15){
-        current.x = 15;
-    }
+    if (current.x > 15) current.x = 15;
+    else if (current.x < 0) current.x = 0;
     if (current.y > 15) current.y = 15;
+    else if (current.y < 0) current.y = 0;
+
     
     origin.x = current.x, origin.y = current.y;
 
