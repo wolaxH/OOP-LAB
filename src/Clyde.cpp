@@ -1,10 +1,11 @@
 #include "../include/Clyde.hpp"
 
-Clyde::Clyde(std::string id, int x, int y, Point Pacman) : Character(x, y), Pacman_Point(Pacman.x, Pacman.y){
-    this->id = id;
+Clyde::Clyde(std::string id, int x, int y, Point Pacman) : Character(id,x, y), Pacman_Point(Pacman.x, Pacman.y), origin(x, y){
 }
 
 void Clyde::DoBehavior(){
+    Pacman_Point = Getpoint();
+    Setpoint(origin.x, origin.y);
     Point current = Getpoint();
 
     if (Pacman_Point.x != current.x && Pacman_Point.y != current.y){    //move 2 axis
@@ -21,6 +22,13 @@ void Clyde::DoBehavior(){
         if (Pacman_Point.x > current.x) current.x += 2;
         else current.x -= 2;
     }
+    if (current.x > 15){
+        current.x = 15;
+    }
+    if (current.y > 15) current.y = 15;
+    
+    origin.x = current.x, origin.y = current.y;
+
 
     Setpoint(current.x, current.y);
 }

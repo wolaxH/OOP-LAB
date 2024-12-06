@@ -1,7 +1,6 @@
 #include "../include/Inky.hpp"
 
-Inky::Inky(std::string id, int x, int y) : Character(x, y){
-    this->id = id;
+Inky::Inky(std::string id, int x, int y) : Character(id,x, y){
 }
 
 void Inky::DoBehavior(){

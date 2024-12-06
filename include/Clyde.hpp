@@ -7,10 +7,10 @@
 class Clyde : public Character{
 private:
     Point Pacman_Point;
+    Point origin;
 public:
     Clyde(std::string id, int x, int y, Point Pacman);
 
-    Point GetPacmanPoint();
     void DoBehavior() override;
 
 };

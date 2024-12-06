@@ -1,6 +1,8 @@
 #include "../include/Character.hpp"
 
-Character::Character(std::string id, int x, int y) : point(x, y){}
+Character::Character(std::string id, int x, int y) : point(x, y){
+    this->id = id;
+}
 
 Point Character::Getpoint(){ return point;}
 

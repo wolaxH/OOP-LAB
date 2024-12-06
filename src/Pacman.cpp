@@ -1,6 +1,6 @@
 #include "../include/Pacman.hpp"
 
-Pacman::Pacman(int x, int y) : Character(x, y){
+Pacman::Pacman(std::string id ,int x, int y) : Character(id , x, y){
 }
 
 void Pacman::DoBehavior(){
@@ -8,10 +8,10 @@ void Pacman::DoBehavior(){
     Point current = Getpoint();
     bool flag;
 
-    std::cout << "Enter operate";
-    std::cin >> operate;
+    std::cout << "Enter operate : ";
 
     do{
+        std::cin >> operate;
         flag = false;
         switch (operate)
         {
@@ -32,7 +32,18 @@ void Pacman::DoBehavior(){
             flag = true;
             break;
         }
+        if(current.x>15){
+            current.x=15;
+        }
+        if(current.y>15){
+            current.y=15;
+        }
+        if(current.x<0){
+            current.x=0;
+        }
+        if(current.y<0){
+            current.y=0;
+        }
     }while(flag);
-    
     Setpoint(current.x, current.y);
 }

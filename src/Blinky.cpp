@@ -1,7 +1,6 @@
 #include "../include/Blinky.hpp"
 
-Blinky::Blinky(std::string id, int x, int y) : Character(x, y){
-    this->id = id;
+Blinky::Blinky(std::string id, int x, int y) : Character(id,x, y){
 }
 
 void Blinky::DoBehavior(){
@@ -15,13 +14,13 @@ void Blinky::DoBehavior(){
         Setpoint(p.x + 3, p.y);
         break;
     case Direction::South:
-        Setpoint(p.x, p.y - 3);
+        Setpoint(p.x, p.y + 3);
         break;
     case Direction::West:
         Setpoint(p.x - 3, p.y);
         break;
     case Direction::North:
-        Setpoint(p.x, p.y + 3);
+        Setpoint(p.x, p.y - 3);
         break;
     default:
         Setpoint(0, 0);

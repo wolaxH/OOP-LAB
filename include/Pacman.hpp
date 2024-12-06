@@ -7,7 +7,7 @@
 class Pacman : public Character{
 private:
 public:
-    Pacman(int x, int y);
+    Pacman(std::string id,int x, int y);
 
     void DoBehavior() override;
 };

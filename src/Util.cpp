@@ -3,8 +3,8 @@
 #include <string>
 
 void Draw(Point BlinkyPoint,Point InkyPoint,Point PinkyPoint,Point ClydePoint,Point PacmanPoint){
-    for(int i=0;i<16;i++){
-        for(int j=0;j<16;j++){
+    for(int j = 0; j < 16; j++){
+        for(int i=0;i<16;i++){
             std::string name = ".....";
             if(BlinkyPoint.x == i && BlinkyPoint.y == j){
                 name = "..B..";
@@ -22,9 +22,12 @@ void Draw(Point BlinkyPoint,Point InkyPoint,Point PinkyPoint,Point ClydePoint,Po
                 name = "..O..";
             }
             std::cout<<"|"<<name;
-            if(j == 15) std::cout<<"|\n";
+            if(i == 15) std::cout<<"|\n";
         }
     }
+
+
+
 }
 
 bool IsEnd(std::vector<std::shared_ptr<Character>> Characters){
@@ -32,7 +35,7 @@ bool IsEnd(std::vector<std::shared_ptr<Character>> Characters){
     Point enemy(0, 0);
     for (int i = 0; i < 4; i++){
         enemy = Characters[i]->Getpoint();
-        if (enemy.x == Pacman.x || enemy.y == Pacman.y){
+        if (enemy.x == Pacman.x && enemy.y == Pacman.y){
             return true;
         }
         
